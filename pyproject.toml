@@ -1,0 +1,29 @@
+[project]
+name = "hermes-rtk-hook"
+version = "0.1.0"
+description = "Hermes Agent plugin: filter shell tool output via rtk for 60-90% token savings."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Nikos Efthias" }]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/ta3pks/hermes-rtk-hook"
+Repository = "https://github.com/ta3pks/hermes-rtk-hook"
+Issues = "https://github.com/ta3pks/hermes-rtk-hook/issues"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["filter_map", "hook"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]
