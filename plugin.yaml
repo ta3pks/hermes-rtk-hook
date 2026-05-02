@@ -1,0 +1,6 @@
+name: hermes-rtk-hook
+version: 0.1.0
+description: "Pipes shell tool output through `rtk pipe -f <filter>` for 60-90% token savings via the Hermes transform_terminal_output hook."
+author: nikos efthias
+provides_hooks:
+  - transform_terminal_output
