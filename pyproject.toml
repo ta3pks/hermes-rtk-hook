@@ -26,3 +26,4 @@ py-modules = ["filter_map", "hook"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+pythonpath = ["."]

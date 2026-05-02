@@ -6,7 +6,10 @@ import shutil
 import subprocess
 from typing import Optional
 
-from filter_map import derive_filter_name
+try:
+    from .filter_map import derive_filter_name
+except ImportError:  # standalone import (pytest, REPL) — package context absent
+    from filter_map import derive_filter_name  # type: ignore[no-redef]
 
 
 _RTK_TIMEOUT_SECS = 5
@@ -39,6 +42,8 @@ def transform_terminal_output(
             input=output,
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             timeout=_RTK_TIMEOUT_SECS,
         )
     except Exception:

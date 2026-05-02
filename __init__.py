@@ -7,7 +7,10 @@ through `rtk pipe -f <filter>` for token-efficient filtering.
 
 from __future__ import annotations
 
-from hook import transform_terminal_output
+try:
+    from .hook import transform_terminal_output
+except ImportError:  # standalone import (pytest, REPL) — package context absent
+    from hook import transform_terminal_output  # type: ignore[no-redef]
 
 
 def register(ctx) -> None:
