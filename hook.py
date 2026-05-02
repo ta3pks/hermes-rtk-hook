@@ -41,8 +41,6 @@ def transform_terminal_output(
             text=True,
             timeout=_RTK_TIMEOUT_SECS,
         )
-    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
-        return None
     except Exception:
         return None
 
